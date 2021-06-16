@@ -1,8 +1,12 @@
-import React, { Component } from 'react'
+import React, { Component, useState } from 'react'
 import { Button, Form, Container, Header } from 'semantic-ui-react'
 import './App.css';
 
 function App() {
+
+const [name, setName] = useState('');
+const [age, setAge] = useState('');
+
   return (
     <Container fluid className="container">
     <Header as='h2'>React Google Sheets!</Header>
