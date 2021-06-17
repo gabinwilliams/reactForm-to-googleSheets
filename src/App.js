@@ -9,6 +9,19 @@ const [age, setAge] = useState('');
 const [salary, setSalary] =useState('');
 const [hobby, setHobby] =useState('');
 
+nameHandler = (e) => {
+  setName(e.target.value);
+}
+nameHandler = (e) => {
+  setAge(e.target.value);
+}
+nameHandler = (e) => {
+  setSalary(e.target.value);
+}
+nameHandler = (e) => {
+  setHobby(e.target.value);
+}
+
   return (
     <Container fluid className="container">
     <Header as='h2'>React Google Sheets!</Header>
