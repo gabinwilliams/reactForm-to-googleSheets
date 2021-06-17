@@ -6,6 +6,8 @@ function App() {
 
 const [name, setName] = useState('');
 const [age, setAge] = useState('');
+const [salary, setSalary] =useState('');
+const [hobby, setHobby] =useState('');
 
   return (
     <Container fluid className="container">
