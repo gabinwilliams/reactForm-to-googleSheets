@@ -9,7 +9,12 @@ const [age, setAge] = useState('');
 const [salary, setSalary] =useState('');
 const [hobby, setHobby] =useState('');
 
-changeHandler = (e) => {
+const handleSubmit = () => {
+  let obj = {name, age, salary, hobby}
+  console.log('This is obj to send:', obj);
+}
+
+const changeHandler = (e) => {
   
   switch (e.target.name) {
     case 'name':
@@ -34,7 +39,7 @@ changeHandler = (e) => {
   return (
     <Container fluid className="container">
         <Header as='h2'>React Google Sheets!</Header>
-        <Form className="form" onSubmit={this.submitHandler}>
+        <Form className="form" onSubmit={handleSubmit}>
           <Form.Field>
             <label>Name</label>
             <input placeholder='Enter your name' type="text" name = "name" value = {name} onChange={changeHandler}/>
