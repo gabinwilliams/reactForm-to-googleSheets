@@ -1,5 +1,7 @@
 import React, { Component, useState } from 'react'
 import { Button, Form, Container, Header } from 'semantic-ui-react'
+
+import axios from axios;
 import './App.css';
 
 function App() {
@@ -9,9 +11,15 @@ const [age, setAge] = useState('');
 const [salary, setSalary] =useState('');
 const [hobby, setHobby] =useState('');
 
-const handleSubmit = () => {
+const handleSubmit = (e) => {
+  e.preventDefault();
   let obj = {name, age, salary, hobby}
   console.log('This is obj to send:', obj);
+
+  axios.post('https://sheet.best/api/sheets/cc0d450b-7432-4cd9-bba6-aa226b4d6fe5', obj)
+    .then(response => {
+      console.log('In POST to googleSheets', response);
+    })
 }
 
 const changeHandler = (e) => {
