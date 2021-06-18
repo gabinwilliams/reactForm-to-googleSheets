@@ -10,6 +10,7 @@ const [salary, setSalary] =useState('');
 const [hobby, setHobby] =useState('');
 
 changeHandler = (e) => {
+  
   switch (e.target.name) {
     case 'name':
       setName(e.target.value)
@@ -19,14 +20,14 @@ changeHandler = (e) => {
       break;
     case 'salary':
       setSalary(e.target.value)
-      
       break;
       case 'hobby':
+        setHobby(e.target.value)
         break;
     default:
-      console.log(`Sorry, we are out of ${expr}.`);
+      console.log(`Something is wrong.  Try again`);
   }
-  setName(e.target.value);
+  
 }
 
 
