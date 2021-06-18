@@ -12,8 +12,25 @@ const [age, setAge] = useState('');
 const [salary, setSalary] =useState('');
 const [hobby, setHobby] =useState('');
 
+//Easy function to clear all form inputs and runs in handleSubmit function
+const clearInputs = () => {
+  setName('');
+  setAge('');
+  setSalary('');
+  setHobby('');
+}
+
 const handleSubmit = (e) => {
   e.preventDefault();
+  //form validation: makes sure user fills out all input fields
+  if (name === '' || age === '' || salary === '' || hobby === '') {
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Please fill out all input fields!',
+      
+    })
+  }else {
   let obj = {name, age, salary, hobby}
   console.log('This is obj to send:', obj);
 
@@ -28,6 +45,8 @@ const handleSubmit = (e) => {
         timer: 1500
       })
     })
+    clearInputs();
+  }
 }
 
 const changeHandler = (e) => {
